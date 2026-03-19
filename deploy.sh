@@ -1,7 +1,7 @@
 #!/bin/bash
 # deploy.sh - Script de despliegue manual a AWS S3
 
-BUCKET="mi-bucket-devops"
+BUCKET="mi-bucket-devops-rocoyoyi"
 SOURCE="src/"
 
 echo "========================================="
@@ -11,7 +11,7 @@ echo "========================================="
 # Sincroniza los archivos con S3, eliminando archivos obsoletos
 aws s3 sync "$SOURCE" "s3://$BUCKET" \
     --delete \
-    --acl public-read
+   
 
 if [ $? -eq 0 ]; then
     echo "========================================="
